@@ -1,0 +1,44 @@
+# Secrets and local env
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+*.pem
+*.key
+*.pfx
+*.cer
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Node / Vite
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+frontend/playwright-report/
+frontend/test-results/
+
+# Generated outputs
+.azure/
+evals/results/
+tmp/
+*.log
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

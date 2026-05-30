@@ -1,0 +1,44 @@
+[project]
+name = "sake-concierge"
+version = "0.1.0"
+description = "地域の酒蔵・酒屋向け AI 唎酒師 Web チャットボット"
+requires-python = ">=3.11"
+dependencies = [
+    # Azure AI / Foundry — GA v1 API 対応版にピン留め
+    "azure-ai-projects==2.0.1",
+    "azure-identity>=1.19.0",
+    "azure-storage-blob>=12.29.0",
+    # OpenTelemetry / トレーシング
+    "azure-monitor-opentelemetry>=1.6.0",
+    "azure-core-tracing-opentelemetry>=1.0.0b11",
+    "opentelemetry-api>=1.39.0",
+    "opentelemetry-instrumentation-fastapi>=0.60b0",
+    "opentelemetry-instrumentation-openai-v2>=2.0b0",
+    # .env ファイル読み込み
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+api = [
+    # Step 2 以降で使用
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+    "sse-starlette>=2.1.0",
+]
+eval = [
+    # Step 1C-2: Evaluation（評価）機能
+    "azure-ai-evaluation>=1.15.0",
+]
+dev = [
+    "pytest-cov>=7.0.0",
+    "ruff>=0.8.0",
+    "pytest>=8.0.0",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+

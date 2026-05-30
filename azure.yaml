@@ -1,0 +1,5 @@
+name: sake-concierge
+metadata:
+  template: sake-concierge@0.1.0
+infra:
+  provider: bicep
